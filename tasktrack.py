@@ -9,7 +9,7 @@ def main():
     try:
         command = sys.argv[1]
     except:
-        print("Usage: tasktrack.py (command)")
+        print("Usage: ./tasktrack.py (command)")
         return
 
     argcount = len(sys.argv)
@@ -18,7 +18,7 @@ def main():
         
         # checks for correct no of arguments
         if argcount != 3:
-            print("Error\nCorrect Usage: tasktrack add (newtask)")
+            print("Error\nCorrect Usage: ./tasktrack.py add (newtask)")
             return
 
         newtask = sys.argv[2]
@@ -29,7 +29,7 @@ def main():
 
         # checks for correct no of arguments and checks that task id is an int
         if argcount != 4 or not sys.argv[2].isdigit():
-            print("Error\nCorrect Usage: tasktrack update (task id) (newtask)")
+            print("Error\nCorrect Usage: ./tasktrack.py update (task id) (newtask)")
             return
 
         newtask = sys.argv[3]
@@ -41,7 +41,7 @@ def main():
 
         # checks for correct no of arguments and checks that id is an int
         if argcount != 3 or not sys.argv[2].isdigit():
-            print("Error\nCorrect Usage: tasktrack delete (task id)")
+            print("Error\nCorrect Usage: ./tasktrack.py delete (task id)")
             return
         
         deleteid = sys.argv[2]
@@ -52,7 +52,7 @@ def main():
 
         # checks for correct no of arguments and checks that id is an int
         if argcount != 3 or not sys.argv[2].isdigit():
-            print("Error\nCorrect Usage: tasktrack mark-in-progress (task id)")
+            print("Error\nCorrect Usage: ./tasktrack.py mark-in-progress (task id)")
             return
 
         inprogressid = sys.argv[2]
@@ -63,7 +63,7 @@ def main():
 
         # checks for correct no of arguments and checks that id is an int
         if argcount != 3 or not sys.argv[2].isdigit():
-            print("Error\nCorrect Usage: tasktrack mark-done (task id)")
+            print("Error\nCorrect Usage: ./tasktrack.py mark-done (task id)")
             return
 
         doneid = sys.argv[2]
@@ -74,7 +74,7 @@ def main():
 
         # checks for correct no of arguments
         if argcount < 2 or argcount > 3:
-            print("Error\nCorrect Usage: tasktrack list (done/todo/in-progress)")
+            print("Error\nCorrect Usage: ./tasktrack.py list (done/todo/in-progress)")
             return
         
         listtype = "all"
@@ -85,7 +85,7 @@ def main():
 
             # checks that listtype is valid
             if listtype not in ["all", "todo", "in-progress", "done"]:
-                print("Error\nCorrect Usage: tasktrack list (done/todo/in-progress)")
+                print("Error\nCorrect Usage: ./tasktrack.py list (done/todo/in-progress)")
                 return
         except:
             pass
@@ -94,7 +94,7 @@ def main():
         listtasks(listtype)
         return
 
-    print("Usage: tasktrack (command)")
+    print("Usage: ./tasktrack.py (command)")
 
 def addtask(newtask):
 
